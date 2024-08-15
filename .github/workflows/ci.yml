@@ -31,7 +31,9 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Run build with Gradle wrapper
-        run: ./gradlew build
+        run: |
+            apt install git
+            ./gradlew build
 
       - name: Upload all artifacts
         uses: actions/upload-artifact@v3
